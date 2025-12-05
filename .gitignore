@@ -1,35 +1,26 @@
+# Unity
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
+UserSettings/
 MemoryCaptures/
 
-SysInfo.txt
-*.stackdump
-
-
+# OS / IDE
 .vs/
 *.csproj
 *.sln
-*.unityproj
 *.user
 *.userprefs
-
 .idea/
-*.sln.iml
-
 Thumbs.db
 Desktop.ini
-
 .DS_Store
-.DS_Store?
-
 *~
 
-/[Uu]ser[Ss]ettings/
-
+# Build outputs
 *.apk
 *.aab
 *.app
@@ -38,35 +29,19 @@ Desktop.ini
 *.dll
 *.log
 
-crashlytics-build.properties
-
-AddressableAssetsData/*/*.bin*
-*.addressables
-
+# Gradle and Android
 .gradle/
 **/gradle/
 *.gradle
 unityLibrary/
 build.gradle
 
-.idea/
+# Addressables
+AddressableAssetsData/*/*.bin*
+*.addressables
 
+# CRASH
+crashlytics-build.properties
+
+# TextMeshPro (safe — keeps assets, ignores cached PNGs)
 [Tt]extMesh Pro/Font Assets/**/*.png
-[Tt]extMesh Pro/Font Assets/**/*.asset
-
-ExportedObj/
-*.apk
-*.unitypackage
-
-*.shadergraph.meta
-*.shadergraph
-*.cginc
-*.hlsl
-*.compute
-ShaderCache/
-
-*.xcworkspace
-*.xcodeproj/
-*.xcodeproj/*
-*.xcuserdata/
-
