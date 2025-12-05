@@ -85519,6 +85519,7 @@ GameObject:
   - component: {fileID: 1404876977}
   - component: {fileID: 1404876974}
   - component: {fileID: 1404876972}
+  - component: {fileID: 1404876980}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -85562,8 +85563,8 @@ CharacterController:
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.2
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_SlopeLimit: 55
+  m_StepOffset: 0.4
   m_SkinWidth: 0.05
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
@@ -85606,15 +85607,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404876971}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.96, y: 5.36, z: 70.8}
+  m_LocalRotation: {x: -0, y: -0.94452465, z: -0, w: 0.32844052}
+  m_LocalPosition: {x: 53.96, y: 9.51, z: 88.344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1330600025}
   - {fileID: 12692560}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -141.652, z: 0}
+--- !u!114 &1404876980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404876971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc0add14a636a1478a1f9a403f98a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveProvider: {fileID: 1750936835}
+  stickToGroundForce: 1
+  slopeRayLength: 0.1
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &1405142272
 PrefabInstance:
   m_ObjectHideFlags: 0
