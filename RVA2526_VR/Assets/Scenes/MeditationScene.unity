@@ -10514,7 +10514,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2809524806103044523, guid: 04695107c55d94d488765c36909ae751, type: 3}
       propertyPath: MinDistance
-      value: 0.7742729
+      value: 3.249401
       objectReference: {fileID: 0}
     - target: {fileID: 3004953771442784582, guid: 04695107c55d94d488765c36909ae751, type: 3}
       propertyPath: m_InteractionLayers.m_Bits
@@ -79425,7 +79425,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1299872797
 MonoBehaviour:
