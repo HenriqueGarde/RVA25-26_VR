@@ -164,6 +164,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.DefaultCompany.RVA2526_VR
+    Standalone: com.DefaultCompany.RVA2526-VR
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -854,7 +855,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 62589cd0-e8d7-40ef-85a4-841cf02990e8
   framebufferDepthMemorylessMode: 0

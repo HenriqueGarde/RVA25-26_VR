@@ -11,6 +11,7 @@ public class WalkingMeditation : MonoBehaviour
     public float holdDuration = 7.0f;
 
     public float exhaleDuration = 8.0f;
+    public float repeatDuration = 1.0f;
 
     public Vector3 minSize = new(0.5f, 0.5f, 0.5f);
 
@@ -29,7 +30,8 @@ public class WalkingMeditation : MonoBehaviour
     {
         Inhale,
         Hold,
-        Exhale
+        Exhale,
+        Repeat
     };
 
     private BreathPhase currPhase = BreathPhase.Inhale; 
@@ -62,17 +64,26 @@ public class WalkingMeditation : MonoBehaviour
         else if (currPhase == BreathPhase.Hold)
         {
             guideSphere.transform.localScale = maxSize;
-            if (_timer >= inhaleDuration)
+            if (_timer >= holdDuration)
             {
                 _timer = 0f;
                 currPhase = BreathPhase.Exhale;
             }
         }
-        else
+        else if (currPhase == BreathPhase.Exhale)
         {
             float progress = _timer / exhaleDuration;
-            guideSphere.transform.localScale = Vector3.Lerp(minSize, maxSize, progress);
+            guideSphere.transform.localScale = Vector3.Lerp(maxSize, minSize, progress);
             if (_timer >= exhaleDuration)
+            {
+                _timer = 0f;
+                currPhase = BreathPhase.Repeat;
+            }
+        }
+        else if (currPhase == BreathPhase.Repeat)
+        {
+            guideSphere.transform.localScale = minSize;
+            if (_timer >= repeatDuration)
             {
                 _timer = 0f;
                 currPhase = BreathPhase.Inhale;
@@ -87,7 +98,7 @@ public class WalkingMeditation : MonoBehaviour
 
     public void StartSession()
     {
-        if (_isMeditating)
+        if (!_isMeditating)
         {
             _isMeditating = true;
             guideSphere.SetActive(true);
