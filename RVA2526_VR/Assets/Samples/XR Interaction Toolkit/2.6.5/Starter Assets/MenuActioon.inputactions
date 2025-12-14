@@ -1,0 +1,34 @@
+{
+    "name": "MenuActioon",
+    "maps": [
+        {
+            "name": "Menu",
+            "id": "a20d5d72-e7e8-4979-b1d0-aecf82ed19b4",
+            "actions": [
+                {
+                    "name": "MenuPressed",
+                    "type": "Button",
+                    "id": "df57b9e2-87e2-4090-ae35-b4f3f1edb673",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b6f357d9-96f8-4d89-826c-51a745315ffd",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
