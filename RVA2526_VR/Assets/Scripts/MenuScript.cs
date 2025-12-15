@@ -1,42 +1,70 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class VRMenuController : MonoBehaviour
 {
     [Header("Menu")]
-    public GameObject menuCanvas; // your hand menu canvas
+    public GameObject menuCanvas;
 
     [Header("Player")]
-    public Transform xrOrigin; // XR Origin transform
+    public Transform xrOrigin;
 
     [Header("Teleport Targets")]
     public Transform teleportPointA;
     public Transform teleportPointB;
+    public Transform teleportPointC;
+
+    [Header("Left Hand UI Ray")]
+    public XRRayInteractor leftHandRayInteractor;
+    public XRInteractorLineVisual leftHandLineVisual;
+
+    private CharacterController characterController;
 
     void Start()
     {
-        // Hide menu at start
         if (menuCanvas != null)
             menuCanvas.SetActive(false);
+
+        if (leftHandRayInteractor != null)
+            leftHandRayInteractor.enabled = false;
+
+        if (leftHandLineVisual != null)
+            leftHandLineVisual.enabled = false;
+
+        if (xrOrigin != null)
+            characterController = xrOrigin.GetComponent<CharacterController>();
     }
 
-    // Called from input (e.g. button or gesture)
     public void ToggleMenu()
     {
-        menuCanvas.SetActive(!menuCanvas.activeSelf);
+        bool isOpen = !menuCanvas.activeSelf;
+
+        menuCanvas.SetActive(isOpen);
+
+        // Enable ray + line only when menu is open
+        if (leftHandRayInteractor != null)
+            leftHandRayInteractor.enabled = isOpen;
+
+        if (leftHandLineVisual != null)
+            leftHandLineVisual.enabled = isOpen;
     }
 
-    public void TeleportToPointA()
-    {
-        if (xrOrigin != null && teleportPointA != null)
-            xrOrigin.position = teleportPointA.position;
-    }
+    public void TeleportToPointA() => Teleport(teleportPointA);
+    public void TeleportToPointB() => Teleport(teleportPointB);
+    public void TeleportToPointC() => Teleport(teleportPointC);
 
-    public void TeleportToPointB()
+    private void Teleport(Transform target)
     {
-        if (xrOrigin != null && teleportPointB != null)
-            xrOrigin.position = teleportPointB.position;
+        if (xrOrigin == null || target == null)
+            return;
+
+        if (characterController != null)
+            characterController.enabled = false;
+
+        xrOrigin.position = target.position;
+
+        if (characterController != null)
+            characterController.enabled = true;
     }
 
     public void QuitApp()
