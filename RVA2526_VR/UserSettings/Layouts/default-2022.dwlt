@@ -846,7 +846,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.4673037, y: 0.014582371, z: -0.0077088643, w: 0.88394296}
+    m_Target: {x: 0.102699265, y: -0.8551558, z: 0.18593039, w: 0.47321683}
     speed: 2
     m_Value: {x: 0.46730372, y: 0.014582372, z: -0.0077088648, w: 0.883943}
   m_Size:
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300000067000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
